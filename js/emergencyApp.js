@@ -106,7 +106,7 @@ var emergencyApp = {
 
 		$police.click(function() {
 			$sections.hide();
-            var category = 'Police';
+            var category = 'police';
             searchfor(category);
 			$call.fadeIn("fast");
 			arrayStack.push($main);
@@ -115,7 +115,7 @@ var emergencyApp = {
 
 		$firefighters.click(function(){
 			$sections.hide();
-            var category = 'Firefighter';
+            var category = 'firefighter';
             searchfor(category);
 			$call.fadeIn("fast");
 			arrayStack.push($main);
@@ -123,7 +123,7 @@ var emergencyApp = {
 
 		$ambulance.click(function(){
 			$sections.hide();
-            var category = 'Ambulance';
+            var category = 'ambulance';
             searchfor(category);
 			$call.fadeIn("fast");
 			arrayStack.push($main);
@@ -144,14 +144,14 @@ var emergencyApp = {
 		$hospitals.click(function() {
 			$sections.hide();
 			arrayStack.push($otherServices);
-            searchfor('Hospital');
+            searchfor('hospital');
 			$hospitalPage.fadeIn("fast");
         });
 
 		$towingServices.click(function(){
 			$sections.hide();
 			arrayStack.push($otherServices);
-            var category = 'Towingservices';
+            var category = 'towingservices';
             searchfor(category);
 			$call.fadeIn("fast");
 		});
