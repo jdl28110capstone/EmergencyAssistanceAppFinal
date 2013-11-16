@@ -3,7 +3,7 @@
     <name>Emergency Assistance</name>
     <description> Mobile Version to Capstone Project of Alpaca Tech</description>
     <author href="" email="jdl28110@gmail.com">Juan C. de León Díaz</author>
-    <icon src="images/hospital-building.png" gap:role="default"/>
+
     <content src="index.html" />
     <access origin="*"/>
     <access uri="*" subdomains="true" origin="*" />
@@ -12,6 +12,6 @@
     <preference name="webviewbounce" value="true" />
     <preference name="phonegap-version" value="3.1.0" />
     <preference name="KeyboardShrinksView" value="true" />
-    <gap:splash src="images/user-marker.png"/>
-    
+
+
 </widget>
