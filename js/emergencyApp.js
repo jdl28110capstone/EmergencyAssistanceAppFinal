@@ -260,7 +260,7 @@ function searchfor(Category){
         },
 
         function locationFail() {
-            navigator.notification.alert('Oops, could not find you, is your GPS enable?');
+            alert('Oops, could not find you, is your GPS enable?');
         }, geolocationOptions);
     alert("Tienes que darle reboot al android, maybe?");
 
