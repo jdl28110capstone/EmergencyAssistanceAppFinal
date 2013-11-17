@@ -89,11 +89,6 @@ var emergencyApp = {
 
 	createEvents: function () {
 
-        $('#map-page').on('pageshow', function (event) {
-            var positions= new Position();
-            Map.displayMap(positions.getPositions());
-        });
-
 		$registerButton.click(function () {
 			$sections.hide();
 			$registrationPage.fadeIn("fast");
@@ -146,6 +141,10 @@ var emergencyApp = {
 			arrayStack.push($otherServices);
             searchfor('hospital');
 			$hospitalPage.fadeIn("fast");
+            $(document).on('pageshow', '#map-page', function (event) {
+                var positions= new Position();
+                Map.displayMap(positions.getPositions());
+            });
         });
 
 		$towingServices.click(function(){
@@ -264,7 +263,9 @@ function searchfor(Category){
         function locationFail() {
             navigator.notification.alert('Oops, could not find you, is your GPS enable?');
         }, geolocationOptions);
-}
+
+    }
+
 
 
 
