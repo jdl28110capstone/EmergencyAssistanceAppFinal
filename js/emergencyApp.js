@@ -104,6 +104,7 @@ var emergencyApp = {
             var category = 'police';
 			arrayStack.push($main);
             searchfor(category);
+            setInterval(function(){}, 15000);
             $call.fadeIn("fast");
 		});
 
@@ -237,6 +238,7 @@ function searchfor(Category){
         maximumAge: 10 * 1000, // 10 seconds
         enableHighAccuracy: true
     };
+    $.mobile.loading('show');
     var positions = new Position();
     alert("Esta llegando hasta antes de getcurrent");
 

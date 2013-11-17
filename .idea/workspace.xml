@@ -70,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emergencyApp.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="emergencyApp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="263" column="34" selection-start="7915" selection-end="7915" vertical-scroll-proportion="0.0" vertical-offset="4585" max-vertical-offset="5400">
+            <state line="240" column="29" selection-start="7061" selection-end="7061" vertical-scroll-proportion="0.41801387" vertical-offset="4139" max-vertical-offset="5436">
               <folding />
             </state>
           </provider>
@@ -88,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="4" selection-start="176" selection-end="176" vertical-scroll-proportion="0.3436754" vertical-offset="0" max-vertical-offset="1908">
+            <state line="8" column="4" selection-start="176" selection-end="176" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="1908">
               <folding />
             </state>
           </provider>
@@ -125,8 +125,8 @@
       <list>
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/js/ProviderList.js" />
-        <option value="$PROJECT_DIR$/js/emergencyApp.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/emergencyApp.js" />
       </list>
     </option>
   </component>
@@ -357,7 +357,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/emergencyApp.js</url>
-          <line>113</line>
+          <line>114</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -462,16 +462,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="263" column="34" selection-start="7915" selection-end="7915" vertical-scroll-proportion="0.0" vertical-offset="4585" max-vertical-offset="5400">
+        <state line="8" column="4" selection-start="176" selection-end="176" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="1908">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="176" selection-end="176" vertical-scroll-proportion="0.3436754" vertical-offset="0" max-vertical-offset="1908">
+        <state line="240" column="29" selection-start="7061" selection-end="7061" vertical-scroll-proportion="0.41801387" vertical-offset="4139" max-vertical-offset="5436">
           <folding />
         </state>
       </provider>
