@@ -21,17 +21,17 @@ var emergencyApp = {
 				var $termsAccepted = $("#termsAccepted").is(":checked");
 				console.log($termsAccepted);
 				
-				if ($termsAccepted && $phoneNumber.val().length == 10 && $userPassword.val() == $password.val() ) {
-					var numero = parseInt($phoneNumber.val(), 10);
-					var numNoDecimal= parseInt(numero); //si termsAccepted esta marcado, el largo del numero de telefono es 10, y el password de usuario es igual al password guardado...
-					if (!isNaN(numero) && numero === numNoDecimal && numero > 0){  //esto se cumple solo si el numero de telefono es un numero y no es decimal y es positivo
+				//if ($termsAccepted && $phoneNumber.val().length == 10 && $userPassword.val() == $password.val() ) {
+					//var numero = parseInt($phoneNumber.val(), 10);
+					//var numNoDecimal= parseInt(numero); //si termsAccepted esta marcado, el largo del numero de telefono es 10, y el password de usuario es igual al password guardado...
+					//if (!isNaN(numero) && numero === numNoDecimal && numero > 0){  //esto se cumple solo si el numero de telefono es un numero y no es decimal y es positivo
 				//if ($termsAccepted) {
 						isConfigured = true;
 				//salvar numero en memoria interna!!!
 						console.log($termsAccepted);
 						emergencyApp.init();  //recursion para comenzar Configurado
-					}
-				}                     
+					//}
+				//}
 			});  
 		}   
 	},
