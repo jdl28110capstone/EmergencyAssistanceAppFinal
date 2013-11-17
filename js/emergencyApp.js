@@ -95,7 +95,7 @@ var emergencyApp = {
 		});
 
 		$back.click(function () {
-			$sections.hide();
+			//$sections.hide();
 			arrayStack.pop(arrayStack.length-1).fadeIn("fast");
 		});
 
