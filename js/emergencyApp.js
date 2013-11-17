@@ -102,10 +102,9 @@ var emergencyApp = {
 		$police.click(function() {
 			$sections.hide();
             var category = 'police';
-			$call.fadeIn("fast");
 			arrayStack.push($main);
             searchfor(category);
-			//call(usersArray[counter]);
+            $call.fadeIn("fast");
 		});
 
 		$firefighters.click(function(){
@@ -139,11 +138,9 @@ var emergencyApp = {
 			$sections.hide();
 			arrayStack.push($otherServices);
             searchfor('hospital');
-			$hospitalPage.fadeIn("fast");
-            $(document).on('pageshow', '#map-page', function (event) {
-                var positions= new Position();
-                Map.displayMap(positions.getPositions());
-            });
+            var positions= new Position();
+            Map.displayMap(positions.getPositions());
+            $hospitalPage.fadeIn("fast");
         });
 
 		$towingServices.click(function(){
@@ -243,6 +240,7 @@ function searchfor(Category){
     var positions = new Position();
     alert("Esta llegando hasta antes de getcurrent");
 
+
     navigator.geolocation.getCurrentPosition(
         function (location) {
             var latitude = location.coords.latitude;
@@ -262,8 +260,8 @@ function searchfor(Category){
         function locationFail() {
             alert('Oops, could not find you, is your GPS enable?');
         }, geolocationOptions);
-    alert("Tienes que darle reboot al android, maybe?");
 
+       setInterval(function(){}, 15000);
     }
 
 

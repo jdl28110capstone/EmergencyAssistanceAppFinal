@@ -53,6 +53,6 @@ function getlistofservices(Category, latitude, longitude, positions){
         }
     });
 
-    setInterval(function(){}, 5000);
+    setInterval(function(){}, 3000);
 
 }
