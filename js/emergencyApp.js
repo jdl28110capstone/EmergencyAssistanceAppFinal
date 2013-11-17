@@ -102,27 +102,26 @@ var emergencyApp = {
 		$police.click(function() {
 			$sections.hide();
             var category = 'police';
-            searchfor(category);
 			$call.fadeIn("fast");
 			arrayStack.push($main);
+            searchfor(category);
 			//call(usersArray[counter]);
 		});
 
 		$firefighters.click(function(){
 			$sections.hide();
             var category = 'firefighter';
-            searchfor(category);
 			$call.fadeIn("fast");
 			arrayStack.push($main);
+            searchfor(category);
         });
 
 		$ambulance.click(function(){
 			$sections.hide();
             var category = 'ambulance';
-            searchfor(category);
+            arrayStack.push($main);
 			$call.fadeIn("fast");
-			arrayStack.push($main);
-
+            searchfor(category);
 		});
 
 		$call911.click(function(){
@@ -151,8 +150,8 @@ var emergencyApp = {
 			$sections.hide();
 			arrayStack.push($otherServices);
             var category = 'towingservices';
-            searchfor(category);
 			$call.fadeIn("fast");
+            searchfor(category);
 		});
 
 		$chatButton.click(function(){
