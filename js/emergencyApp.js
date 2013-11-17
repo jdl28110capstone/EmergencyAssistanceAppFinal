@@ -27,7 +27,7 @@ var emergencyApp = {
 					//if (!isNaN(numero) && numero === numNoDecimal && numero > 0){  //esto se cumple solo si el numero de telefono es un numero y no es decimal y es positivo
 				//if ($termsAccepted) {
 						isConfigured = true;
-				//salvar numero en memoria interna!!!
+				//window.localStorage["username"]= phoneNumber.val();
 						console.log($termsAccepted);
 						emergencyApp.init();  //recursion para comenzar Configurado
 					//}
@@ -241,7 +241,7 @@ function searchfor(Category){
         enableHighAccuracy: true
     };
     var positions = new Position();
-    $.mobile.loading('show');
+    alert("Esta llegando hasta antes de getcurrent");
 
     navigator.geolocation.getCurrentPosition(
         function (location) {
@@ -262,6 +262,7 @@ function searchfor(Category){
         function locationFail() {
             navigator.notification.alert('Oops, could not find you, is your GPS enable?');
         }, geolocationOptions);
+    alert("Tienes que darle reboot al android, maybe?");
 
     }
 
