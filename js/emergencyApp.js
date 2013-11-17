@@ -95,9 +95,9 @@ var emergencyApp = {
 		});
 
 		$back.click(function () {
-			//$sections.hide();
-			arrayStack.pop(arrayStack.length-1).fadeIn("fast");
-		});
+			$sections.hide();
+            $main.fadeIn("fast", emergencyApp.mainPage());
+        });
 
 		$police.click(function() {
 			$sections.hide();
