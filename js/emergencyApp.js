@@ -139,9 +139,9 @@ var emergencyApp = {
 			$sections.hide();
 			arrayStack.push($otherServices);
             searchfor('hospital');
+            $hospitalPage.fadeIn("fast");
             var positions= new Position();
             Map.displayMap(positions.getPositions());
-            $hospitalPage.fadeIn("fast");
         });
 
 		$towingServices.click(function(){
@@ -236,8 +236,6 @@ function searchfor(Category){
         enableHighAccuracy: true
     };
     var positions = new Position();
-    alert("Esta llegando hasta antes de getcurrent");
-
 
     navigator.geolocation.getCurrentPosition(
         function (location) {
@@ -260,6 +258,7 @@ function searchfor(Category){
         }, geolocationOptions);
 
        setInterval(function(){}, 15000);
+
     }
 
 
