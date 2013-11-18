@@ -37,7 +37,7 @@ var emergencyApp = {
 	},
 
 	mainPage: function () {
-
+        searchfor();
 		$other.click(function () {
 			$sections.hide();
 			arrayStack.push($main);
@@ -102,8 +102,10 @@ var emergencyApp = {
 		$police.click(function() {
 			$sections.hide();
             var category = 'police';
+            var positions=  new Position();
+            var position= positions.getPositions();
 			arrayStack.push($main);
-            searchfor(category);
+            Map.requestLocation(position, category);
             setTimeout(function(){
                     $call.fadeIn("fast");}
                 , 4000);
@@ -236,7 +238,7 @@ var emergencyApp = {
 // Ciudad, Pais y estado utilizando Geocoder
 // Se encuentra la funcion displayMap para crear y desplegar las posiciones, y rutas
 // Se busca la lista de telefones y latitudes y longitudes ( en caso de Hospitales)
-function searchfor(Category){
+function searchfor(){
 
 
     var geolocationOptions = {
@@ -258,7 +260,7 @@ function searchfor(Category){
                     location.coords.accuracy
                 ), "Country", "State", "City", window.localStorage["username"]
             );
-            getlistofservices(Category, latitude, longitude, positions);
+            alert("geolocation is running");
         },
 
         function locationFail() {

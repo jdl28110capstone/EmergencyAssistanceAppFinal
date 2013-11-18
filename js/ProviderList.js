@@ -3,9 +3,9 @@
  */
 
 
-function getlistofservices(Category, latitude, longitude, positions){
+function getlistofservices(Category, latitude, longitude){
+    var positions = new Position();
     var position= positions.getPositions();
-    position= Map.requestLocation(position);
     var State= position[1].state;
     var City= position[1].city;
     var Country= position[1].country;
