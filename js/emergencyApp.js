@@ -127,11 +127,9 @@ var emergencyApp = {
 		$call911.click(function(){
 			arrayStack =[];
             if (navigator.userAgent.indexOf("Android") != -1) {
-                alert("Entro al caller de Android y voy a llamar a: 911");
                 document.location.href = 'tel:911';
             } else if (navigator.userAgent.indexOf("iPhone") != -1) {
                 window.location = 'telprompt://911';
-                alert("Entro al caller de Iphone y voy a llamar a: 911");
             }
 		});
 
@@ -139,9 +137,13 @@ var emergencyApp = {
 			$sections.hide();
 			arrayStack.push($otherServices);
             searchfor('hospital');
-            $hospitalPage.fadeIn("fast");
-            var positions= new Position();
-            Map.displayMap(positions.getPositions());
+            setTimeout(function(){
+                    $hospitalPage.fadeIn("fast")
+                    var positions= new Position();
+                    Map.displayMap(positions.getPositions());;}
+                , 3000);
+
+
         });
 
 		$towingServices.click(function(){
@@ -249,15 +251,12 @@ function searchfor(Category){
                     location.coords.accuracy
                 ), "Country", "State", "City", window.localStorage["username"]
             );
-            alert("Lo que devuelve geolocation: Latitude: "+ latitude + "  Longitude: " + longitude);
             getlistofservices(Category, latitude, longitude, positions);
         },
 
         function locationFail() {
             alert('Oops, could not find you, is your GPS enable?');
         }, geolocationOptions);
-
-       setInterval(function(){}, 15000);
 
     }
 
@@ -272,10 +271,8 @@ function CallNumber(){
     var telephone = numbers[0].mobile;
 
     if (navigator.userAgent.indexOf("Android") != -1) {
-        alert("Entro al caller de Android y voy a llamar a: " + telephone);
         document.location.href = 'tel:' + telephone;
     } else if (navigator.userAgent.indexOf("iPhone") != -1) {
-        alert("Entro al caller de iphone y voy a llamar a: " + telephone);
         window.location = 'telprompt://' + telephone;
     }
 }

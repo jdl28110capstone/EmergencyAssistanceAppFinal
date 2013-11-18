@@ -29,9 +29,6 @@ Map.displayMap = function(position)
         }
     }
 
-    alert("Numero de posiciones en el HospitalLatLng : "+ HospitalLatLng.length );
-
-
     var options = {
         center: userLatLng,
         zoom:14,

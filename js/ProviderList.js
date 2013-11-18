@@ -10,20 +10,13 @@ function getlistofservices(Category, latitude, longitude, positions){
     var City= position[1].city;
     var Country= position[1].country;
 
-    alert("Country: "+ Country + "  City: " + City + "  State: "+ State +
-        "  Latitude: "+ position[1].position.latitude + "  Longitude: " + position[1].position.longitude +
-        " Category: " + Category);
-
-
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?City=" + City,
         contentType: "application/json;  charset=ISO-8859-15",
         dataType: "json",
-        data: {category: "firefighter", latitude: latitude, longitude:longitude, state: "PR", city:City, country:"PR", clientPhoneNumber: "787-472-9078"},
+        data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
-            alert("Entro a success de ajax");
-            alert("Mobile:" + data[0].phoneNumber );
             for(var i = 0; i < 1; i++){
                 if (Category == 'hospital'){
                     positions.savePosition(
@@ -34,14 +27,12 @@ function getlistofservices(Category, latitude, longitude, positions){
                         ), Country ,State ,City ,data[i].mobile);
                 }
                 else {
-                    //alert("Mobile:" + data[0].phoneNumber );
                     positions.savePosition(
                         new Coords(
                             latitude,
                             longitude,
                             positions.position[i].accuracy
                         ), Country ,State ,City ,data[i].mobile);
-
 
                 }
             }
@@ -52,7 +43,5 @@ function getlistofservices(Category, latitude, longitude, positions){
             navigator.notification.alert("MobileEmergency Failed", function() {});
         }
     });
-
-    setInterval(function(){}, 3000);
 
 }
