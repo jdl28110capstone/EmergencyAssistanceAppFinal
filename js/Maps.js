@@ -18,7 +18,7 @@ Map.displayMap = function(position)
     var userLatLng = null;
     var HospitalLatLng = [];
 
-    for(var i = 1; i < 7; i++){
+    for(var i = 0; i < 7; i++){
         if( i==1){
             userLatLng = new google.maps.LatLng(position[i].position.latitude, position[i].position.longitude);
         }
@@ -42,6 +42,7 @@ Map.displayMap = function(position)
 
 
     var map = new google.maps.Map(document.getElementById('map'), options);
+    alert("se forma el mapa");
     var marker = new google.maps.Marker({
         position: userLatLng,
         map: map,
@@ -167,7 +168,7 @@ Map.requestLocation = function(position)
                     if(ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.long_name;
                     if(ac.types.indexOf("country") >= 0) country = ac.long_name;
                 }
-                position= positions.savePosition( position[0].position, country, state, city, '7873627430');
+                position= positions.updatePosition(0, position[0].position, country, state, city, '7873627430');
 
 
             }

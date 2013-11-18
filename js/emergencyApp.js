@@ -104,24 +104,29 @@ var emergencyApp = {
             var category = 'police';
 			arrayStack.push($main);
             searchfor(category);
-            setInterval(function(){}, 5000);
-            $call.fadeIn("fast");
+            setTimeout(function(){
+                    $call.fadeIn("fast");}
+                , 4000);
 		});
 
 		$firefighters.click(function(){
 			$sections.hide();
             var category = 'firefighter';
-			$call.fadeIn("fast");
 			arrayStack.push($main);
             searchfor(category);
+            setTimeout(function(){
+                    $call.fadeIn("fast");}
+                , 4000);
         });
 
 		$ambulance.click(function(){
 			$sections.hide();
             var category = 'ambulance';
             arrayStack.push($main);
-			$call.fadeIn("fast");
             searchfor(category);
+            setTimeout(function(){
+                    $call.fadeIn("fast");}
+                , 4000);
 		});
 
 		$call911.click(function(){
@@ -138,10 +143,10 @@ var emergencyApp = {
 			arrayStack.push($otherServices);
             searchfor('hospital');
             setTimeout(function(){
-                    $hospitalPage.fadeIn("fast")
+                    $hospitalPage.fadeIn("fast");
                     var positions= new Position();
                     Map.displayMap(positions.getPositions());;}
-                , 3000);
+                , 4000);
 
 
         });
@@ -150,8 +155,10 @@ var emergencyApp = {
 			$sections.hide();
 			arrayStack.push($otherServices);
             var category = 'towingservices';
-			$call.fadeIn("fast");
             searchfor(category);
+            setTimeout(function(){
+                    $call.fadeIn("fast");}
+                , 4000);
 		});
 
 		$chatButton.click(function(){
@@ -269,7 +276,7 @@ function CallNumber(){
     var position = new Position();
     var numbers =  position.getPositions();
     var telephone = numbers[0].mobile;
-
+    alert("Numero a llamar: "+ telephone);
     if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
     } else if (navigator.userAgent.indexOf("iPhone") != -1) {
@@ -284,6 +291,5 @@ function CallNumber(){
 function Next(){
     var numbers = new Position();
     numbers.deletePosition(0);
-    alert("Entro a Next")
     CallNumber();
 }

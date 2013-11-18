@@ -10,6 +10,7 @@ function getlistofservices(Category, latitude, longitude, positions){
     var City= position[1].city;
     var Country= position[1].country;
 
+    alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country);
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?City=" + City,
@@ -17,7 +18,9 @@ function getlistofservices(Category, latitude, longitude, positions){
         dataType: "json",
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
+            alert("Entro a Ajax");
             for(var i = 0; i < 1; i++){
+
                 if (Category == 'hospital'){
                     positions.savePosition(
                         new Coords(
@@ -25,6 +28,7 @@ function getlistofservices(Category, latitude, longitude, positions){
                             data[i].longitude,
                             positions.position[i].accuracy
                         ), Country ,State ,City ,data[i].mobile);
+                    alert("Hospital latitud: "+ data[i].latitude+ " Longituded: "+ data[i].longitude);
                 }
                 else {
                     positions.savePosition(
@@ -40,8 +44,9 @@ function getlistofservices(Category, latitude, longitude, positions){
 
         },
         error: function(){
-            navigator.notification.alert("MobileEmergency Failed", function() {});
+            alert("MobileEmergency Failed");
         }
     });
+    alert("Numero de telefono en  position: " + position[0].mobile )
 
 }
