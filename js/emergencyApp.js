@@ -141,9 +141,12 @@ var emergencyApp = {
 		});
 
 		$hospitals.click(function() {
+
 			$sections.hide();
+            var positions=  new Position();
+            var position= positions.getPositions();
 			arrayStack.push($otherServices);
-            searchfor('hospital');
+            Map.requestLocation(position, 'hospital');
             setTimeout(function(){
                     $hospitalPage.fadeIn("fast");
                     var positions= new Position();

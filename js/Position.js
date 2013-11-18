@@ -38,7 +38,8 @@ function Position(position, datetime, country, state, city, mobile)
             positions = [];
 
         positions.unshift(new Position(position, new Date(), country, state, city, mobile));
-        // Only the top MAX_POSITIONS results are needed
+
+
         if (positions.length > this.MAX_POSITIONS)
             positions = positions.slice(0, this.MAX_POSITIONS);
 

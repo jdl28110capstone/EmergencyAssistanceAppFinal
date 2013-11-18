@@ -10,7 +10,8 @@ function getlistofservices(Category, latitude, longitude){
     var City= position[0].city;
     var Country= position[0].country;
 
-    alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country);
+    alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country+ " latitude: " +latitude + " longitud: "+ longitude);
+
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=" + City,
@@ -19,13 +20,14 @@ function getlistofservices(Category, latitude, longitude){
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
             alert("Entro a Ajax");
+            var positions2= new Position();
 
             for(var i = 0; i < 1; i++){
 
                 if (Category == 'hospital'){
                     alert("Hospital");
 
-                    positions.savePosition(
+                    positions2.savePosition(
                         new Coords(
                             data[i].latitude,
                             data[i].longitude,
@@ -33,19 +35,21 @@ function getlistofservices(Category, latitude, longitude){
                         ), Country ,State ,City , '7873627434' );
                     alert("Hospital latitud: "+ data[i].latitude + " Longitude: "+ data[i].longitude);
 
-                    var position2= positions.getPositions();
+                    var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
 
                 }
                 else {
                     alert("Policia");
-                    positions.savePosition(
+                    alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
+                    positions2.savePosition(
                         new Coords(
-                            latitude,
-                            longitude,
+                            position[i].position.latitude,
+                            position[i].position.longitude,
                             position[i].position.accuracy
-                        ), Country ,State ,City ,data[i].phoneNumber);
-                    var position2= positions.getPositions();
+                        ), Country ,State ,City , data[i].phoneNumber);
+
+                    var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
 
                 }
