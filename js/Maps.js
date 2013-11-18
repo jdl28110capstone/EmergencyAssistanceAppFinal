@@ -18,7 +18,7 @@ Map.displayMap = function(position)
     var userLatLng = null;
     var HospitalLatLng = [];
 
-    for(var i = 0; i < 7; i++){
+    for(var i = 0; i < 2; i++){
         if( i==1){
             userLatLng = new google.maps.LatLng(position[i].position.latitude, position[i].position.longitude);
         }

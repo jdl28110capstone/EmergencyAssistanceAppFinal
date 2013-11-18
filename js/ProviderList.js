@@ -29,9 +29,12 @@ function getlistofservices(Category, latitude, longitude, positions){
                         new Coords(
                             data[i].latitude,
                             data[i].longitude,
-                            position[i].accuracy
+                            position[i].position.accuracy
                         ), Country ,State ,City , '7873627434' );
-                    alert("Hospital latitud: "+ data[0].latitude + " Longitude: "+ data[0].longitude);
+                    alert("Hospital latitud: "+ data[i].latitude + " Longitude: "+ data[i].longitude);
+
+                    var position2= positions.getPositions();
+                    alert("Numero de telefono en  position: " + position2[0].mobile )
 
                 }
                 else {
@@ -39,7 +42,7 @@ function getlistofservices(Category, latitude, longitude, positions){
                         new Coords(
                             latitude,
                             longitude,
-                            positions.position[i].accuracy
+                            position[i].position.accuracy
                         ), Country ,State ,City ,data[i].mobile);
 
                 }
@@ -51,6 +54,6 @@ function getlistofservices(Category, latitude, longitude, positions){
             alert("MobileEmergency Failed");
         }
     });
-    alert("Numero de telefono en  position: " + position[0].mobile )
+
 
 }
