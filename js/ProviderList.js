@@ -38,6 +38,7 @@ function getlistofservices(Category, latitude, longitude){
 
                 }
                 else {
+                    alert("Policia");
                     positions.savePosition(
                         new Coords(
                             latitude,
