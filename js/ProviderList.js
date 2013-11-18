@@ -42,15 +42,14 @@ function getlistofservices(Category, latitude, longitude){
                 else {
                     alert("Policia");
                     alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
-                    positions2.savePosition(
-                        new Coords(
-                            position[i].position.latitude,
-                            position[i].position.longitude,
-                            position[i].position.accuracy
-                        ), Country ,State ,City , data[i].phoneNumber);
 
+
+                    alert("Numero de telefono en  position: " + data[i].phoneNumber );
+
+                    positions2.savePosition(position[0].position, Country ,State ,City , data[i].phoneNumber);
                     var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
+
 
                 }
             }
