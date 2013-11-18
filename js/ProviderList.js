@@ -43,7 +43,7 @@ function getlistofservices(Category, latitude, longitude, positions){
                             latitude,
                             longitude,
                             position[i].position.accuracy
-                        ), Country ,State ,City ,data[i].mobile);
+                        ), Country ,State ,City ,data[i].phoneNumber);
 
                 }
             }

@@ -58,9 +58,9 @@ var emergencyApp = {
                         type : "GET",
                         url : "http://eaa.ece.uprm.edu:3000/registerDevice",
                         contentType : "application/json",
-                        data: {username: dUsername, password: dPassword, name:name},
+                        data: { clientPhoneNumber: dUsername, password: dPassword, name:name},
                         success : function(responseServer){
-                           if(responseServer.validacion == "ok"){
+                           if(responseServer.result == "Success"){
 
                     /// si la validacion es correcta, muestra la pantalla "LoginPage"
 
