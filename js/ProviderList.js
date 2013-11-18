@@ -27,13 +27,13 @@ function getlistofservices(Category, latitude, longitude){
                 if (Category == 'hospital'){
                     alert("Hospital");
 
+                    alert("Hospital latitud: "+ data[i].latitude + " Longitude: "+ data[i].longitude);
                     positions2.savePosition(
                         new Coords(
                             data[i].latitude,
                             data[i].longitude,
                             position[i].position.accuracy
                         ), Country ,State ,City , '7873627434' );
-                    alert("Hospital latitud: "+ data[i].latitude + " Longitude: "+ data[i].longitude);
 
                     var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
