@@ -168,7 +168,7 @@ Map.requestLocation = function(position, category)
                     if(ac.types.indexOf("administrative_area_level_1") >= 0) state = ac.long_name;
                     if(ac.types.indexOf("country") >= 0) country = ac.long_name;
                 }
-                positions.savePosition( position[0].position, country, state, city, '7873627430');
+                positions.updatePosition(0, position[0].position, country, state, city, '7873627430');
                 getlistofservices(category, position[0].position.latitude, position[0].position.longitude);
 
 
