@@ -6,9 +6,9 @@
 function getlistofservices(Category, latitude, longitude){
     var positions = new Position();
     var position= positions.getPositions();
-    var State= position[1].state;
-    var City= position[1].city;
-    var Country= position[1].country;
+    var State= position[0].state;
+    var City= position[0].city;
+    var Country= position[0].country;
 
     alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country);
     $.ajax({
@@ -44,6 +44,8 @@ function getlistofservices(Category, latitude, longitude){
                             longitude,
                             position[i].position.accuracy
                         ), Country ,State ,City ,data[i].phoneNumber);
+                    var position2= positions.getPositions();
+                    alert("Numero de telefono en  position: " + position2[0].mobile )
 
                 }
             }

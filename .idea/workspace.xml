@@ -62,7 +62,7 @@
       <file leaf-file-name="ProviderList.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ProviderList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="35" selection-start="140" selection-end="140" vertical-scroll-proportion="0.085510686" vertical-offset="72" max-vertical-offset="1152">
+            <state line="47" column="85" selection-start="1918" selection-end="1918" vertical-scroll-proportion="2.0095012" vertical-offset="0" max-vertical-offset="1188">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="emergencyApp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="44" selection-start="7884" selection-end="7884" vertical-scroll-proportion="0.0" vertical-offset="4521" max-vertical-offset="5436">
+            <state line="262" column="41" selection-start="7881" selection-end="7881" vertical-scroll-proportion="0.0" vertical-offset="1667" max-vertical-offset="5436">
               <folding />
             </state>
           </provider>
@@ -453,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="44" selection-start="7884" selection-end="7884" vertical-scroll-proportion="0.0" vertical-offset="4521" max-vertical-offset="5436">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/Maps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="175" column="0" selection-start="5212" selection-end="5212" vertical-scroll-proportion="0.0" vertical-offset="2783" max-vertical-offset="3330">
@@ -467,9 +460,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="262" column="41" selection-start="7881" selection-end="7881" vertical-scroll-proportion="0.0" vertical-offset="1667" max-vertical-offset="5436">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/ProviderList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="35" selection-start="140" selection-end="140" vertical-scroll-proportion="0.085510686" vertical-offset="72" max-vertical-offset="1152">
+        <state line="47" column="85" selection-start="1918" selection-end="1918" vertical-scroll-proportion="2.0095012" vertical-offset="0" max-vertical-offset="1188">
           <folding />
         </state>
       </provider>
