@@ -10,6 +10,31 @@ function getlistofservices(Category, latitude, longitude){
     var City= position[0].city;
     var Country= position[0].country;
 
+
+    for( var index=0; index < City.length; index++){
+        if( City.charAt(index) == "ü" ){
+            City = City.replaceAt(index, "u");
+        }
+        else if ( City.charAt(index) == "ñ" ){
+            City = City.replaceAt(index, "n");
+        }
+        else if( City.charAt(index) == "í" ){
+            City = City.replaceAt(index, "i");
+        }
+        else if( City.charAt(index) == "ó" ){
+            City = City.replaceAt(index, "o");
+        }
+        else if( City.charAt(index) == "é" ){
+            City = City.replaceAt(index, "e");
+        }
+        else if( City.charAt(index) == "á" ){
+            City = City.replaceAt(index, "a");
+        }
+        else if( City.charAt(index) == "ú" ){
+            City = City.replaceAt(index, "u");
+        }
+    }
+
     alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country+ " latitude: " +latitude + " longitud: "+ longitude);
 
     $.ajax({
@@ -65,3 +90,7 @@ function getlistofservices(Category, latitude, longitude){
 
 
 }
+
+    String.prototype.replaceAt=function(index, character) {
+        return this.substr(0, index) + character + this.substr(index+character.length);
+    }
