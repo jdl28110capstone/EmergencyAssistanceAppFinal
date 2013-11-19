@@ -4,6 +4,7 @@
     <description> Mobile Version to Capstone Project of Alpaca Tech</description>
     <author href="" email="jdl28110@gmail.com">Juan C. de León Díaz</author>
 
+    <access uri="http://eaa.ece.uprm.edu/" subdomains="true" origin="http://eaa.ece.uprm.edu/" />
     <content src="index.html" />
     <access origin="*"/>
     <access uri="*" subdomains="true" origin="*" />
