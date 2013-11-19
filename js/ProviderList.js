@@ -15,8 +15,8 @@ function getlistofservices(Category, latitude, longitude){
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=" + City,
-        contentType: "application/json;  charset=ISO-8859-15",
-        dataType: "jsonp",
+        contentType: "application/json",
+        dataType: "json",
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
             alert("Entro a Ajax");
