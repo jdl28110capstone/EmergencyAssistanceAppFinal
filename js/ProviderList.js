@@ -19,7 +19,8 @@ function getlistofservices(Category, latitude, longitude){
         dataType: "json",
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
-            alert("Entro a Ajax: "+ data);
+
+            alert("Entro a Ajax: "+ data.phoneList);
             var positions2= new Position();
 
             for(var i = 0; i < 1; i++){
@@ -40,13 +41,14 @@ function getlistofservices(Category, latitude, longitude){
 
                 }
                 else {
+                    var phoneList = data.phoneList.split(",");
                     alert("Policia");
                     alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
 
 
-                    alert("Numero de telefono en  position: " + data.list[i].phoneNumber );
+                    alert("Numero de telefono en  position: " + phoneList[i] );
 
-                    positions2.savePosition(position[0].position, Country ,State ,City , data.list[i].phoneNumber);
+                    positions2.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
                     var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
 
