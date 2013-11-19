@@ -14,7 +14,7 @@ function getlistofservices(Category, latitude, longitude){
 
     $.ajax({
         type: "GET",
-        url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=Ponce",
+        url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=" + City,
         contentType: "application/json; charset=uff-8",
         dataType: "json",
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
