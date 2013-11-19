@@ -13,13 +13,13 @@ function getlistofservices(Category, latitude, longitude){
     alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country+ " latitude: " +latitude + " longitud: "+ longitude);
 
     $.ajax({
-        type: "POST",
+        type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=" + City,
         contentType: "application/json",
         dataType: "json",
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
-            alert("Entro a Ajax");
+            alert("Entro a Ajax: "+ data);
             var positions2= new Position();
 
             for(var i = 0; i < 1; i++){
