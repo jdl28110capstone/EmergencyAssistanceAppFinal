@@ -15,9 +15,9 @@ function getlistofservices(Category, latitude, longitude){
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=" + City,
-        contentType: "application/json",
-        dataType: "json",
-        timeout: 6000,
+        contentType: "application/json; charset=uff-8",
+        dataType: "jsonp",
+        crossDomain: true,
         data: {category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: "787-472-9078"},
         success : function(data){
             alert("Entro a Ajax: "+ data);
@@ -45,9 +45,9 @@ function getlistofservices(Category, latitude, longitude){
                     alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
 
 
-                    alert("Numero de telefono en  position: " + data[i].phoneNumber );
+                    alert("Numero de telefono en  position: " + data.phoneNumber );
 
-                    positions2.savePosition(position[0].position, Country ,State ,City , data[i].phoneNumber);
+                    positions2.savePosition(position[0].position, Country ,State ,City , data.phoneNumber);
                     var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
 
