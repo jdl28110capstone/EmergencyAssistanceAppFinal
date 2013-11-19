@@ -44,9 +44,9 @@ function getlistofservices(Category, latitude, longitude){
                     alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
 
 
-                    alert("Numero de telefono en  position: " + data.phoneNumber );
+                    alert("Numero de telefono en  position: " + data.list[i].phoneNumber );
 
-                    positions2.savePosition(position[0].position, Country ,State ,City , data.phoneNumber);
+                    positions2.savePosition(position[0].position, Country ,State ,City , data.list[i].phoneNumber);
                     var position2= positions2.getPositions();
                     alert("Numero de telefono en  position: " + position2[0].mobile )
 
