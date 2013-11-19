@@ -13,7 +13,7 @@ function getlistofservices(Category, latitude, longitude){
     alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country+ " latitude: " +latitude + " longitud: "+ longitude);
 
     $.ajax({
-        type: "GET",
+        type: "POST",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency?city=" + City,
         contentType: "application/json",
         dataType: "json",
