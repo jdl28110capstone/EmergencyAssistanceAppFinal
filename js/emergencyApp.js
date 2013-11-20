@@ -20,18 +20,29 @@ var emergencyApp = {
 			$done.click(function () {
 				var $termsAccepted = $("#termsAccepted").is(":checked");
 				console.log($termsAccepted);
-				
-				//if ($termsAccepted && $phoneNumber.val().length == 10 && $userPassword.val() == $password.val() ) {
-					//var numero = parseInt($phoneNumber.val(), 10);
-					//var numNoDecimal= parseInt(numero); //si termsAccepted esta marcado, el largo del numero de telefono es 10, y el password de usuario es igual al password guardado...
-					//if (!isNaN(numero) && numero === numNoDecimal && numero > 0){  //esto se cumple solo si el numero de telefono es un numero y no es decimal y es positivo
-				//if ($termsAccepted) {
+                var phon = $phoneNumber.val();
+				if (window.localStorage["username"]== phon){
+				    if ($termsAccepted) {
+                        alert ("entro");
 						isConfigured = true;
-				//window.localStorage["username"]= phoneNumber.val();
+
 						console.log($termsAccepted);
 						emergencyApp.init();  //recursion para comenzar Configurado
-					//}
-				//}
+		            }
+                }
+                else{
+
+                    var phone = window.localStorage["username"];
+                    for( var index=0; index < phone.length; index++){
+                        if( index > 6){
+                            phone = phone.replaceAt(index, "*");
+                        }
+                    }
+                    alert("Your login failed, your number is: " + phone);
+
+
+                }
+
 			});  
 		}   
 	},
@@ -48,26 +59,35 @@ var emergencyApp = {
 	registrationPage: function() {
 		$register.click(function () {
 
-        if ( $userName.val() !== null || $password.val() !== null || $confirmPassword.val() !== null || $name.val() !== null) {
-             if( $password.val() == $confirmPassword.val()) {
-                 var numero = parseInt($phoneNumber.val(), 10);
+        if ( $userName.val() !== null || $name.val() !== null) {
+                 var numero = parseInt($userName.val(), 10);
                  var numNoDecimal= parseInt(numero); //si termsAccepted esta marcado, el largo del numero de telefono es 10, y el password de usuario es igual al password guardado...
                  if (!isNaN(numero) && numero === numNoDecimal && numero > 0){
+                    var dUsername = $userName.val();
+                    var name = $name.val();
 
                     $.ajax({
                         type : "GET",
                         url : "http://eaa.ece.uprm.edu:3000/registerDevice",
                         contentType : "application/json",
-                        data: { clientPhoneNumber: dUsername, password: dPassword, name:name},
+                        data: { clientPhoneNumber: dUsername, name:name},
                         success : function(responseServer){
+                            alert("entra a ajax de register");
                            if(responseServer.result == "Success"){
+                               alert("Entra a register pq es un success");
 
                     /// si la validacion es correcta, muestra la pantalla "LoginPage"
+                               window.localStorage["username"]= dUsername;
 
                                 $sections.hide();
                                 $login.show();
 
                              }
+                            else {
+                               navigator.notification.alert("Your registration failed", function() {});
+                               $sections.hide();
+                               $login.show();
+                           }
 
                         },
                          error: function(){
@@ -75,8 +95,9 @@ var emergencyApp = {
                          }
                      });
                  }
-             }
+
         }
+
 		});
 	},
 	
@@ -108,27 +129,31 @@ var emergencyApp = {
             Map.requestLocation(position, category);
             setTimeout(function(){
                     $call.fadeIn("fast");}
-                , 4000);
+                , 2000);
 		});
 
 		$firefighters.click(function(){
 			$sections.hide();
             var category = 'firefighter';
+            var positions=  new Position();
+            var position= positions.getPositions();
 			arrayStack.push($main);
-            searchfor(category);
+            Map.requestLocation(position, category);
             setTimeout(function(){
                     $call.fadeIn("fast");}
-                , 4000);
+                , 2000);
         });
 
 		$ambulance.click(function(){
 			$sections.hide();
             var category = 'ambulance';
+            var positions=  new Position();
+            var position= positions.getPositions();
             arrayStack.push($main);
-            searchfor(category);
+            Map.requestLocation(position, category);
             setTimeout(function(){
                     $call.fadeIn("fast");}
-                , 4000);
+                , 2000);
 		});
 
 		$call911.click(function(){
@@ -151,19 +176,21 @@ var emergencyApp = {
                     $hospitalPage.fadeIn("fast");
                     var positions= new Position();
                     Map.displayMap(positions.getPositions());;}
-                , 4000);
+                , 3000);
 
 
         });
 
 		$towingServices.click(function(){
 			$sections.hide();
+            var positions=  new Position();
+            var position= positions.getPositions();
 			arrayStack.push($otherServices);
             var category = 'towingservices';
-            searchfor(category);
+            Map.requestLocation(position, category);
             setTimeout(function(){
                     $call.fadeIn("fast");}
-                , 4000);
+                , 2000);
 		});
 
 		$chatButton.click(function(){

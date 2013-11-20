@@ -67,7 +67,7 @@ function getlistofservices(Category, latitude, longitude){
                 }
                 else {
                     var phoneList = data.phoneList.split(",");
-                    alert("Policia");
+                    alert("" + Category);
                     alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
 
 
@@ -84,7 +84,7 @@ function getlistofservices(Category, latitude, longitude){
 
         },
         error: function(){
-            alert("MobileEmergency Failed");
+            alert("Mobile Emergency ajax failed");
         }
     });
 
