@@ -27,8 +27,11 @@ var emergencyApp = {
 						isConfigured = true;
 
 						console.log($termsAccepted);
-						emergencyApp.init();  //recursion para comenzar Configurado
+                        searchfor();
 		            }
+                    else {
+                        alert("You must accept terms and  agreements");
+                    }
                 }
                 else{
 
@@ -48,7 +51,7 @@ var emergencyApp = {
 	},
 
 	mainPage: function () {
-        searchfor();
+
 		$other.click(function () {
 			$sections.hide();
 			arrayStack.push($main);
@@ -121,27 +124,31 @@ var emergencyApp = {
         });
 
 		$police.click(function() {
-			$sections.hide();
-            var category = 'police';
-            var positions=  new Position();
-            var position= positions.getPositions();
-			arrayStack.push($main);
-            Map.requestLocation(position, category);
-            setTimeout(function(){
+            if ( checkRequirements()== true){
+			   $sections.hide();
+               var category = 'police';
+               var positions=  new Position();
+               var position= positions.getPositions();
+			   arrayStack.push($main);
+               Map.requestLocation(position, category);
+               setTimeout(function(){
                     $call.fadeIn("fast");}
-                , 2000);
+               , 2000);
+            }
 		});
 
 		$firefighters.click(function(){
-			$sections.hide();
-            var category = 'firefighter';
-            var positions=  new Position();
-            var position= positions.getPositions();
-			arrayStack.push($main);
-            Map.requestLocation(position, category);
-            setTimeout(function(){
+            if ( checkRequirements()== true){
+	    	   $sections.hide();
+               var category = 'firefighter';
+               var positions=  new Position();
+               var position= positions.getPositions();
+		       arrayStack.push($main);
+               Map.requestLocation(position, category);
+               setTimeout(function(){
                     $call.fadeIn("fast");}
-                , 2000);
+               , 2000);
+            }
         });
 
 		$ambulance.click(function(){
@@ -291,10 +298,11 @@ function searchfor(){
                 ), "Country", "State", "City", window.localStorage["username"]
             );
             alert("geolocation is running");
+            emergencyApp.init();  //recursion para comenzar Configurado
         },
 
         function locationFail() {
-            alert('Oops, could not find you, is your GPS enable?');
+            alert('Oops, could not find you, is your GPS enable or do you have a connection?');
         }, geolocationOptions);
 
     }
@@ -324,4 +332,19 @@ function Next(){
     var numbers = new Position();
     numbers.deletePosition(0);
     CallNumber();
+}
+
+function checkRequirements()
+{
+    if (navigator.connection.type == Connection.NONE)
+    {
+        navigator.notification.alert(
+            'To use this app you must enable your internet connection',
+            function(){},
+            'Warning'
+        );
+        return false;
+    }
+
+    return true;
 }
