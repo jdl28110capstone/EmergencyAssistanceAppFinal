@@ -122,8 +122,10 @@ Map.setRoute = function(directionsDisplay, userLatLng, HospitalLatLng)
         request,
         function(response, status)
         {
-            if (status == google.maps.DirectionsStatus.OK)
+            if (status == google.maps.DirectionsStatus.OK){
                 directionsDisplay.setDirections(response);
+                searchfor();
+            }
 
             else
             {

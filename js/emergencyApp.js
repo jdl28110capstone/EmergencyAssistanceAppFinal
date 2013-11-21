@@ -25,6 +25,7 @@ var emergencyApp = {
 				    if ($termsAccepted) {
                         alert ("entro");
 						isConfigured = true;
+                        window.localStorage["status"]= 'no';
 
 						console.log($termsAccepted);
                         searchfor();
@@ -152,15 +153,17 @@ var emergencyApp = {
         });
 
 		$ambulance.click(function(){
-			$sections.hide();
-            var category = 'ambulance';
-            var positions=  new Position();
-            var position= positions.getPositions();
-            arrayStack.push($main);
-            Map.requestLocation(position, category);
-            setTimeout(function(){
+            if ( checkRequirements()== true){
+			   $sections.hide();
+               var category = 'ambulance';
+               var positions=  new Position();
+               var position= positions.getPositions();
+               arrayStack.push($main);
+               Map.requestLocation(position, category);
+               setTimeout(function(){
                     $call.fadeIn("fast");}
                 , 2000);
+            }
 		});
 
 		$call911.click(function(){
@@ -173,7 +176,7 @@ var emergencyApp = {
 		});
 
 		$hospitals.click(function() {
-
+           // if ( checkRequirements()== true){
 			$sections.hide();
             var positions=  new Position();
             var position= positions.getPositions();
@@ -184,20 +187,21 @@ var emergencyApp = {
                     var positions= new Position();
                     Map.displayMap(positions.getPositions());;}
                 , 3000);
-
-
+            //}
         });
 
 		$towingServices.click(function(){
-			$sections.hide();
-            var positions=  new Position();
-            var position= positions.getPositions();
-			arrayStack.push($otherServices);
-            var category = 'towingservices';
-            Map.requestLocation(position, category);
-            setTimeout(function(){
+            if ( checkRequirements()== true){
+			   $sections.hide();
+               var positions=  new Position();
+               var position= positions.getPositions();
+			   arrayStack.push($otherServices);
+               var category = 'towingservices';
+               Map.requestLocation(position, category);
+               setTimeout(function(){
                     $call.fadeIn("fast");}
                 , 2000);
+            }
 		});
 
 		$chatButton.click(function(){
@@ -298,7 +302,11 @@ function searchfor(){
                 ), "Country", "State", "City", window.localStorage["username"]
             );
             alert("geolocation is running");
-            emergencyApp.init();  //recursion para comenzar Configurado
+
+            if (window.localStorage["status"] != 'main'){
+                window.localStorage["status"]= 'main';
+               emergencyApp.init();  //recursion para comenzar Configurado
+            }
         },
 
         function locationFail() {
@@ -315,12 +323,18 @@ function searchfor(){
 function CallNumber(){
     var position = new Position();
     var numbers =  position.getPositions();
-    var telephone = numbers[0].mobile;
-    alert("Numero a llamar: "+ telephone);
-    if (navigator.userAgent.indexOf("Android") != -1) {
+    var telephone = numbers[1].mobile;
+    if ( telephone != undefined){
+       alert("Numero a llamar: "+ telephone);
+       if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
-    } else if (navigator.userAgent.indexOf("iPhone") != -1) {
+       }
+       else if (navigator.userAgent.indexOf("iPhone") != -1) {
         window.location = 'telprompt://' + telephone;
+       }
+    }
+    else {
+        alert ("There is not number to call");
     }
 }
 
@@ -330,8 +344,14 @@ function CallNumber(){
 // primero en la lista, cosa de que cuando se llame CallNumber, se utilice el proximo numero.
 function Next(){
     var numbers = new Position();
-    numbers.deletePosition(0);
+    var telephones = numbers.getPositions();
+    if ( telephones[1].mobile != undefined){
+    numbers.deletePosition(1);
     CallNumber();
+    }
+    else {
+        aler(" There is not next number");
+    }
 }
 
 function checkRequirements()

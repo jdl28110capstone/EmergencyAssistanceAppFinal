@@ -45,12 +45,12 @@ function getlistofservices(Category, latitude, longitude){
         data: {city: City, category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: window.localStorage["username"]},
         success : function(data){
 
-            for(var i = 0; i < 1; i++){
+            if (Category == 'hospital'){
+                var latitudeList = data.latitudeList.split(",");
+                var longitudeList = data.longitudeList.split(",");
 
-                if (Category == 'hospital'){
+                for(var i = 0; i < latitudeList.length - 1; i++){
                     alert(" Ajax Hospital");
-                    var latitudeList = data.latitudeList.split(",");
-                    var longitudeList = data.longitudeList.split(",");
 
                     alert(" Ajax Hospital latitud: "+ latitudeList[i] + " Longitude: "+ longitudeList[i]);
                     positions.savePosition(
@@ -59,10 +59,11 @@ function getlistofservices(Category, latitude, longitude){
                             longitudeList[i],
                             position[i].position.accuracy
                         ), Country ,State ,City);
-
                 }
-                else {
+            }
+            else {
                     var phoneList = data.phoneList.split(",");
+                    for(var i = 0; i < phoneList.length - 1; i++){
                     alert("" + Category);
                     alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
 
@@ -70,8 +71,11 @@ function getlistofservices(Category, latitude, longitude){
                     alert("Numero de telefono en  position: " + phoneList[i] );
 
                     positions.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
-                    var position2= positions2.getPositions();
-                    alert("Numero de telefono en  position: " + position2[0].mobile )
+
+                    var positions2 = new Position();
+                    var position2 = positions2.getPositions();
+                    alert("Numero de telefono en  position: " + position2[0].mobile );
+                    searchfor();
                 }
             }
             return positions;
