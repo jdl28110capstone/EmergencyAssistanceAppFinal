@@ -35,8 +35,6 @@ function getlistofservices(Category, latitude, longitude){
         }
     }
 
-    alert(" Estado: "+ State + " City: "+ City + " Country: "+ Country+ " latitude: " +latitude + " longitud: "+ longitude);
-
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency",
@@ -49,32 +47,39 @@ function getlistofservices(Category, latitude, longitude){
                 var latitudeList = data.latitudeList.split(",");
                 var longitudeList = data.longitudeList.split(",");
 
-                for(var i = 0; i < latitudeList.length - 1; i++){
-                    alert(" Ajax Hospital");
+                for(var i = 0; i < 3; i++){
 
-                    alert(" Ajax Hospital latitud: "+ latitudeList[i] + " Longitude: "+ longitudeList[i]);
-                    positions.savePosition(
+                    if (i < latitudeList.length - 1){
+                        positions.savePosition(
                         new Coords(
                             latitudeList[i],
                             longitudeList[i],
                             position[i].position.accuracy
                         ), Country ,State ,City);
+                    }
+                    else {
+                        positions.savePosition(
+                            new Coords(
+                                'vacio',
+                                'vacio',
+                                position[i].position.accuracy
+                            ), Country ,State ,City);
+                    }
+
                 }
+                searchfor();
+
             }
             else {
                     var phoneList = data.phoneList.split(",");
                     for(var i = 0; i < phoneList.length - 1; i++){
-                    alert("" + Category);
-                    alert("Latitude: "+ latitude + " longitude: "+ longitude+ " accuracy: " +position[i].position.accuracy);
 
-
-                    alert("Numero de telefono en  position: " + phoneList[i] );
-
-                    positions.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
-
-                    var positions2 = new Position();
-                    var position2 = positions2.getPositions();
-                    alert("Numero de telefono en  position: " + position2[0].mobile );
+                    if (i < phoneList.length - 1) {
+                       positions.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
+                    }
+                    else {
+                       positions.savePosition(position[0].position, Country ,State ,City , 'vacio');
+                    }
                     searchfor();
                 }
             }

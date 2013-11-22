@@ -23,7 +23,7 @@ Map.displayMap = function(position)
             userLatLng = new google.maps.LatLng(position[i].position.latitude, position[i].position.longitude);
         }
         else{
-            if (position[i].position.latitude != undefined){
+            if (position[i].position.latitude != 'vacio'){
                 HospitalLatLng.unshift(new google.maps.LatLng(position[i].position.latitude, position[i].position.longitude));
             }
         }
@@ -42,7 +42,7 @@ Map.displayMap = function(position)
 
 
     var map = new google.maps.Map(document.getElementById('map'), options);
-    alert("se forma el mapa");
+
     var marker = new google.maps.Marker({
         position: userLatLng,
         map: map,

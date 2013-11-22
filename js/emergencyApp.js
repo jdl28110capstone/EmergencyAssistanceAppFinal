@@ -23,7 +23,6 @@ var emergencyApp = {
                 var phon = $phoneNumber.val();
 				if (window.localStorage["username"]== phon){
 				    if ($termsAccepted) {
-                        alert ("entro");
 						isConfigured = true;
                         window.localStorage["status"]= 'no';
 
@@ -76,9 +75,8 @@ var emergencyApp = {
                         contentType : "application/json",
                         data: { clientPhoneNumber: dUsername, name:name},
                         success : function(responseServer){
-                            alert("entra a ajax de register");
+
                            if(responseServer.result == "Success"){
-                               alert("Entra a register pq es un success");
 
                     /// si la validacion es correcta, muestra la pantalla "LoginPage"
                                window.localStorage["username"]= dUsername;
@@ -176,7 +174,7 @@ var emergencyApp = {
 		});
 
 		$hospitals.click(function() {
-           // if ( checkRequirements()== true){
+            if ( checkRequirements()== true){
 			$sections.hide();
             var positions=  new Position();
             var position= positions.getPositions();
@@ -187,7 +185,7 @@ var emergencyApp = {
                     var positions= new Position();
                     Map.displayMap(positions.getPositions());;}
                 , 3000);
-            //}
+            }
         });
 
 		$towingServices.click(function(){
@@ -301,7 +299,6 @@ function searchfor(){
                     location.coords.accuracy
                 ), "Country", "State", "City", window.localStorage["username"]
             );
-            alert("geolocation is running");
 
             if (window.localStorage["status"] != 'main'){
                 window.localStorage["status"]= 'main';
@@ -324,8 +321,8 @@ function CallNumber(){
     var position = new Position();
     var numbers =  position.getPositions();
     var telephone = numbers[1].mobile;
-    if ( telephone != undefined){
-       alert("Numero a llamar: "+ telephone);
+    if ( telephone != 'vacio' && telephone != window.localStorage["username"]){
+        
        if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
        }
@@ -345,7 +342,7 @@ function CallNumber(){
 function Next(){
     var numbers = new Position();
     var telephones = numbers.getPositions();
-    if ( telephones[1].mobile != undefined){
+    if ( telephones[1].mobile != 'vacio' && telephones[1].mobile != window.localStorage["username"]){
     numbers.deletePosition(1);
     CallNumber();
     }

@@ -5,7 +5,7 @@
 function Position(position, datetime, country, state, city, mobile)
 {
     var _db = window.sessionStorage;
-    var MAX_POSITIONS = 6;
+    var MAX_POSITIONS = 4;
 
     this.position = position;
     this.datetime = datetime;
