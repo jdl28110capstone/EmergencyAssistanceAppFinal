@@ -35,6 +35,8 @@ function getlistofservices(Category, latitude, longitude){
         }
     }
 
+    alert ("City: "+ City + " State: " + State + " Country: " + Country);
+
     $.ajax({
         type: "GET",
         url : "http://eaa.ece.uprm.edu:3000/mobileEmergency",

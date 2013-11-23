@@ -188,17 +188,17 @@ var emergencyApp = {
         });
 
 		$towingServices.click(function(){
-            if ( checkRequirements()== true){
+            //if ( checkRequirements()== true){
 			   $sections.hide();
                var positions=  new Position();
                var position= positions.getPositions();
 			   arrayStack.push($otherServices);
-               var category = 'towingservices';
+               var category = 'tow';
                Map.requestLocation(position, category);
                setTimeout(function(){
                     $call.fadeIn("fast");}
                 , 2000);
-            }
+            //}
 		});
 
 		$chatButton.click(function(){
@@ -303,7 +303,6 @@ function searchfor(){
                 window.localStorage["status"]= 'main';
                emergencyApp.init();  //recursion para comenzar Configurado
             }
-            alert("geo running");
         },
 
         function locationFail() {
@@ -323,7 +322,6 @@ function CallNumber(){
     var telephone = numbers[1].mobile;
     alert ("telephone: " + telephone);
     if ( telephone != 'vacio' && telephone != window.localStorage["username"]){
-        alert("Entro a llamar: " + telephone);
        if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
        }

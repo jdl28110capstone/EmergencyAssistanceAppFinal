@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Maps.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Maps.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Maps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="24" selection-start="472" selection-end="472" vertical-scroll-proportion="0.9951923" vertical-offset="0" max-vertical-offset="3348">
+            <state line="23" column="24" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3348">
               <folding />
             </state>
           </provider>
@@ -62,16 +62,16 @@
       <file leaf-file-name="ProviderList.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ProviderList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="28" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0" vertical-offset="815" max-vertical-offset="1908">
+            <state line="37" column="73" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="1528" max-vertical-offset="1944">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emergencyApp.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="emergencyApp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="25" selection-start="6008" selection-end="6008" vertical-scroll-proportion="0.0" vertical-offset="3277" max-vertical-offset="6714">
+            <state line="304" column="13" selection-start="9190" selection-end="9190" vertical-scroll-proportion="11.480769" vertical-offset="696" max-vertical-offset="6678">
               <folding />
             </state>
           </provider>
@@ -119,10 +119,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/Position.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/emergencyApp.js" />
         <option value="maps.gstatic.com/intl/en_us/mapfiles/api-3/15/1a/main.js" />
-        <option value="$PROJECT_DIR$/js/ProviderList.js" />
         <option value="$PROJECT_DIR$/js/Maps.js" />
+        <option value="$PROJECT_DIR$/js/ProviderList.js" />
+        <option value="$PROJECT_DIR$/js/emergencyApp.js" />
       </list>
     </option>
   </component>
@@ -297,7 +297,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13143736" sideWeight="0.70679015" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29320988" sideWeight="0.49961567" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29320988" sideWeight="0.49961567" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4074074" sideWeight="0.50038433" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -437,23 +437,23 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
+    <entry file="file://$PROJECT_DIR$/js/Maps.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="25" selection-start="6008" selection-end="6008" vertical-scroll-proportion="0.0" vertical-offset="3277" max-vertical-offset="6714">
+        <state line="23" column="24" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3348">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ProviderList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="28" selection-start="2511" selection-end="2511" vertical-scroll-proportion="0.0" vertical-offset="815" max-vertical-offset="1908">
+        <state line="37" column="73" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="1528" max-vertical-offset="1944">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Maps.js">
+    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="24" selection-start="472" selection-end="472" vertical-scroll-proportion="0.9951923" vertical-offset="0" max-vertical-offset="3348">
+        <state line="304" column="13" selection-start="9190" selection-end="9190" vertical-scroll-proportion="11.480769" vertical-offset="696" max-vertical-offset="6678">
           <folding />
         </state>
       </provider>
