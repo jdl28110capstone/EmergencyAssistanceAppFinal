@@ -47,41 +47,43 @@ function getlistofservices(Category, latitude, longitude){
                 var latitudeList = data.latitudeList.split(",");
                 var longitudeList = data.longitudeList.split(",");
 
-                for(var i = 0; i < 3; i++){
+                for(var i = 2; i > -1; i--){
 
-                    if (i < latitudeList.length - 1){
-                        positions.savePosition(
-                        new Coords(
-                            latitudeList[i],
-                            longitudeList[i],
-                            position[i].position.accuracy
-                        ), Country ,State ,City);
-                    }
-                    else {
+                    if (i >= latitudeList.length - 1){
+
                         positions.savePosition(
                             new Coords(
                                 'vacio',
                                 'vacio',
-                                position[i].position.accuracy
+                                position[0].position.accuracy
+                            ), Country ,State ,City);
+                    }
+                    else {
+                        alert("Numero de phonelist: " + latitudeList[i]);
+                        positions.savePosition(
+                            new Coords(
+                                latitudeList[i],
+                                longitudeList[i],
+                                position[0].position.accuracy
                             ), Country ,State ,City);
                     }
 
                 }
                 searchfor();
-
             }
             else {
                     var phoneList = data.phoneList.split(",");
-                    for(var i = 0; i < phoneList.length - 1; i++){
+                for(var i = 2; i > -1 ; i--){
 
-                    if (i < phoneList.length - 1) {
-                       positions.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
+                    if (i >= phoneList.length - 1) {
+                        positions.savePosition(position[0].position, Country ,State ,City , 'vacio');
                     }
                     else {
-                       positions.savePosition(position[0].position, Country ,State ,City , 'vacio');
+                        alert("Numero de phonelist: " + phoneList[i]);
+                        positions.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
                     }
-                    searchfor();
                 }
+                searchfor();
             }
             return positions;
 

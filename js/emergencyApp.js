@@ -133,7 +133,7 @@ var emergencyApp = {
                setTimeout(function(){
                     $call.fadeIn("fast");}
                , 2000);
-            //}
+           // }
 		});
 
 		$firefighters.click(function(){
@@ -174,7 +174,7 @@ var emergencyApp = {
 		});
 
 		$hospitals.click(function() {
-            if ( checkRequirements()== true){
+            //if ( checkRequirements()== true){
 			$sections.hide();
             var positions=  new Position();
             var position= positions.getPositions();
@@ -182,10 +182,9 @@ var emergencyApp = {
             Map.requestLocation(position, 'hospital');
             setTimeout(function(){
                     $hospitalPage.fadeIn("fast");
-                    var positions= new Position();
-                    Map.displayMap(positions.getPositions());;}
+                    Map.displayMap();}
                 , 3000);
-            }
+            //}
         });
 
 		$towingServices.click(function(){
@@ -304,6 +303,7 @@ function searchfor(){
                 window.localStorage["status"]= 'main';
                emergencyApp.init();  //recursion para comenzar Configurado
             }
+            alert("geo running");
         },
 
         function locationFail() {
@@ -321,8 +321,9 @@ function CallNumber(){
     var position = new Position();
     var numbers =  position.getPositions();
     var telephone = numbers[1].mobile;
+    alert ("telephone: " + telephone);
     if ( telephone != 'vacio' && telephone != window.localStorage["username"]){
-
+        alert("Entro a llamar: " + telephone);
        if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
        }

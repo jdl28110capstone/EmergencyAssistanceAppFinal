@@ -12,14 +12,17 @@ function Map() {
  * Para desplegar el mapa, reciba posiciones y actualiza el mapa, también se llama la función que se encarga de colocar las rutas los
  * mapas.
  */
-Map.displayMap = function(position)
+Map.displayMap = function()
 {
-
+    var positions = new Position();
+    var position = positions.getPositions();
     var userLatLng = null;
     var HospitalLatLng = [];
 
-    for(var i = 0; i < 2; i++){
-        if( i==1){
+    alert ("Position 0: "+ position[0].position.latitude);
+
+    for(var i = 0; i < 4; i++){
+        if( i==0){
             userLatLng = new google.maps.LatLng(position[i].position.latitude, position[i].position.longitude);
         }
         else{
@@ -51,7 +54,7 @@ Map.displayMap = function(position)
     });
     var circle  = new google.maps.Circle({
         center: userLatLng,
-        radius: position[1].position.accuracy,
+        radius: position[0].position.accuracy,
         map: map,
         fillColor: '#70E7FF',
         fillOpacity: 0.2,
@@ -91,9 +94,6 @@ Map.displayMap = function(position)
     for ( var i=0; i <5; i++){
         this.setRoute(new google.maps.DirectionsRenderer(options), userLatLng, HospitalLatLng[i]);
     }
-
-    $.mobile.loading('hide');
-
 }
 
 
@@ -124,7 +124,6 @@ Map.setRoute = function(directionsDisplay, userLatLng, HospitalLatLng)
         {
             if (status == google.maps.DirectionsStatus.OK){
                 directionsDisplay.setDirections(response);
-                searchfor();
             }
 
             else
