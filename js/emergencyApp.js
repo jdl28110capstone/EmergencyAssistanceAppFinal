@@ -123,7 +123,7 @@ var emergencyApp = {
         });
 
 		$police.click(function() {
-            if ( checkRequirements()== true){
+            //if ( checkRequirements()== true){
 			   $sections.hide();
                var category = 'police';
                var positions=  new Position();
@@ -133,7 +133,7 @@ var emergencyApp = {
                setTimeout(function(){
                     $call.fadeIn("fast");}
                , 2000);
-            }
+            //}
 		});
 
 		$firefighters.click(function(){
@@ -322,7 +322,7 @@ function CallNumber(){
     var numbers =  position.getPositions();
     var telephone = numbers[1].mobile;
     if ( telephone != 'vacio' && telephone != window.localStorage["username"]){
-        
+
        if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
        }
@@ -347,7 +347,7 @@ function Next(){
     CallNumber();
     }
     else {
-        aler(" There is not next number");
+        alert(" There is not next number");
     }
 }
 
