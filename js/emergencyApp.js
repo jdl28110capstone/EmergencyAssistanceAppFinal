@@ -63,11 +63,10 @@ var emergencyApp = {
 		$register.click(function () {
 
         if ( $userName.val() !== null || $name.val() !== null) {
-                 var numero = parseInt($userName.val(), 10);
-                 var numNoDecimal= parseInt(numero); //si termsAccepted esta marcado, el largo del numero de telefono es 10, y el password de usuario es igual al password guardado...
-                 if (!isNaN(numero) && numero === numNoDecimal && numero > 0){
-                    var dUsername = $userName.val();
-                    var name = $name.val();
+                 var dUsername = $userName.val();
+                 var name = $name.val();
+                 var pattern = /^\d{10}$/;
+                 if (pattern.test(dUsername)) {
 
                     $.ajax({
                         type : "GET",
@@ -86,16 +85,19 @@ var emergencyApp = {
 
                              }
                             else {
-                               navigator.notification.alert("Your registration failed", function() {});
+                               alert("Your registration failed");
                                $sections.hide();
                                $login.show();
                            }
 
                         },
                          error: function(){
-                             navigator.notification.alert("Your registration failed", function() {});
+                             alert("Your registration failed");
                          }
                      });
+                 }
+                 else{
+                     alert("Please enter the complete phone number without '-'  ");
                  }
 
         }
@@ -123,7 +125,7 @@ var emergencyApp = {
         });
 
 		$police.click(function() {
-            //if ( checkRequirements()== true){
+            if ( checkRequirements()== true){
 			   $sections.hide();
                var category = 'police';
                var positions=  new Position();
@@ -133,7 +135,7 @@ var emergencyApp = {
                setTimeout(function(){
                     $call.fadeIn("fast");}
                , 2000);
-           // }
+            }
 		});
 
 		$firefighters.click(function(){
@@ -174,7 +176,7 @@ var emergencyApp = {
 		});
 
 		$hospitals.click(function() {
-            //if ( checkRequirements()== true){
+            if ( checkRequirements()== true){
 			$sections.hide();
             var positions=  new Position();
             var position= positions.getPositions();
@@ -184,11 +186,11 @@ var emergencyApp = {
                     $hospitalPage.fadeIn("fast");
                     Map.displayMap();}
                 , 3000);
-            //}
+            }
         });
 
 		$towingServices.click(function(){
-            //if ( checkRequirements()== true){
+            if ( checkRequirements()== true){
 			   $sections.hide();
                var positions=  new Position();
                var position= positions.getPositions();
@@ -198,7 +200,7 @@ var emergencyApp = {
                setTimeout(function(){
                     $call.fadeIn("fast");}
                 , 2000);
-            //}
+            }
 		});
 
 		$chatButton.click(function(){
@@ -320,7 +322,6 @@ function CallNumber(){
     var position = new Position();
     var numbers =  position.getPositions();
     var telephone = numbers[1].mobile;
-    alert ("telephone: " + telephone);
     if ( telephone != 'vacio' && telephone != window.localStorage["username"]){
        if (navigator.userAgent.indexOf("Android") != -1) {
         document.location.href = 'tel:' + telephone;
@@ -354,11 +355,7 @@ function checkRequirements()
 {
     if (navigator.connection.type == Connection.NONE)
     {
-        navigator.notification.alert(
-            'To use this app you must enable your internet connection',
-            function(){},
-            'Warning'
-        );
+        alert("To use this app you must enable your internet connection");
         return false;
     }
 

@@ -53,7 +53,7 @@
       <file leaf-file-name="Maps.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Maps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="24" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3348">
+            <state line="23" column="24" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="3348">
               <folding />
             </state>
           </provider>
@@ -68,19 +68,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emergencyApp.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="emergencyApp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="304" column="13" selection-start="9190" selection-end="9190" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="6678">
+            <state line="202" column="12" selection-start="6338" selection-end="6338" vertical-scroll-proportion="8.9777775" vertical-offset="0" max-vertical-offset="6624">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="38" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.5714286" vertical-offset="378" max-vertical-offset="1872">
+            <state line="33" column="38" selection-start="1049" selection-end="1049" vertical-scroll-proportion="-8.0" vertical-offset="378" max-vertical-offset="1872">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1250" selection-end="1281" vertical-scroll-proportion="0.0" vertical-offset="453" max-vertical-offset="1152">
+            <state line="36" column="0" selection-start="1250" selection-end="1281" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1152">
               <folding />
             </state>
           </provider>
@@ -207,12 +207,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -226,6 +226,14 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -236,23 +244,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -336,9 +336,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13163972" sideWeight="0.81701446" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967898" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -354,7 +354,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/emergencyApp.js</url>
-          <line>140</line>
+          <line>142</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -427,13 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Position.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="2340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="http://maps.gstatic.com/intl/en_us/mapfiles/api-3/15/1a/main.js">
       <provider selected="true" editor-type-id="httpFileEditor">
         <state />
@@ -446,6 +439,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="38" selection-start="1049" selection-end="1049" vertical-scroll-proportion="-8.0" vertical-offset="378" max-vertical-offset="1872">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/ProviderList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="73" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="1528" max-vertical-offset="1944">
@@ -453,16 +453,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
+    <entry file="file://$PROJECT_DIR$/js/Position.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="304" column="13" selection-start="9190" selection-end="9190" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="6678">
+        <state line="7" column="25" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="2340">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/emergencyApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="38" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.5714286" vertical-offset="378" max-vertical-offset="1872">
+        <state line="202" column="12" selection-start="6338" selection-end="6338" vertical-scroll-proportion="8.9777775" vertical-offset="0" max-vertical-offset="6624">
           <folding />
         </state>
       </provider>
