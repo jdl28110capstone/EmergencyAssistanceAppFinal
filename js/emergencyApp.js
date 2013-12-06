@@ -210,6 +210,7 @@ var emergencyApp = {
 		});
 		
 		$chatPolice.click(function(){
+
 			$sections.hide();
 			arrayStack.push($chooseChat);
 			emergencyApp.chatTime("police");
