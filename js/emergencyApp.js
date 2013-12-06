@@ -299,11 +299,13 @@ function searchfor(){
                emergencyApp.init();  //recursion para comenzar Configurado
             }
             else {
+                alert("Mode "+ mode);
                 if (mode == "0"){
                     $sections.hide();
                     $call.fadeIn("fast");
                 }
                 if (mode == "2"){
+                    alert("entro a mode 2");
                     $sections.hide();
                     $hospitalPage.fadeIn("fast");
                 }
