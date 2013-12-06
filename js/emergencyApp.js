@@ -298,7 +298,7 @@ function searchfor(){
                emergencyApp.init();  //recursion para comenzar Configurado
             }
             else {
-                if (mode = '0'){
+                if (mode == '0'){
                     $sections.hide();
                     $call.fadeIn("fast");
                 }
