@@ -1,3 +1,5 @@
+var mode;
+
 var emergencyApp = {
 
 	init: function () {
@@ -70,7 +72,7 @@ var emergencyApp = {
 
                     $.ajax({
                         type : "GET",
-                        url : "http://eaa.ece.uprm.edu:3000/registerDevice",
+                        url : "http://eaa.ece.uprm.edu:3600/registerDevice",
                         contentType : "application/json",
                         data: { clientPhoneNumber: dUsername, name:name},
                         success : function(responseServer){
@@ -92,7 +94,7 @@ var emergencyApp = {
 
                         },
                          error: function(){
-                             alert("Your registration failed");
+                             alert("Your registration failed Ajax error");
                          }
                      });
                  }
@@ -124,84 +126,73 @@ var emergencyApp = {
             $main.fadeIn("fast", emergencyApp.mainPage());
         });
 
-		$police.click(function() {
-            if ( checkRequirements()== true){
-			   $sections.hide();
-               var category = 'police';
-               var positions=  new Position();
-               var position= positions.getPositions();
-			   arrayStack.push($main);
-               Map.requestLocation(position, category);
-               setTimeout(function(){
-                    $call.fadeIn("fast");}
-               , 2000);
-            }
-		});
+        $police.click(function () {
+            // if ( checkRequirements()== true){
 
-		$firefighters.click(function(){
-            if ( checkRequirements()== true){
-	    	   $sections.hide();
-               var category = 'firefighter';
-               var positions=  new Position();
-               var position= positions.getPositions();
-		       arrayStack.push($main);
-               Map.requestLocation(position, category);
-               setTimeout(function(){
-                    $call.fadeIn("fast");}
-               , 2000);
+            mode = "0";
+            var category = 'police';
+            var positions = new Position();
+            var position = positions.getPositions();
+            arrayStack.push($main);
+            Map.requestLocation(position, category);
+
+            //  }
+        });
+
+        $firefighters.click(function () {
+            if (checkRequirements() == true) {
+                mode = "0";
+                var category = 'firefighter';
+                var positions = new Position();
+                var position = positions.getPositions();
+                arrayStack.push($main);
+                Map.requestLocation(position, category);
+
             }
         });
 
-		$ambulance.click(function(){
-            if ( checkRequirements()== true){
-			   $sections.hide();
-               var category = 'ambulance';
-               var positions=  new Position();
-               var position= positions.getPositions();
-               arrayStack.push($main);
-               Map.requestLocation(position, category);
-               setTimeout(function(){
-                    $call.fadeIn("fast");}
-                , 2000);
-            }
-		});
+        $ambulance.click(function () {
+            if (checkRequirements() == true) {
+                mode = "0";
+                var category = 'ambulance';
+                var positions = new Position();
+                var position = positions.getPositions();
+                arrayStack.push($main);
+                Map.requestLocation(position, category);
 
-		$call911.click(function(){
-			arrayStack =[];
+            }
+        });
+
+        $call911.click(function () {
+            arrayStack = [];
             if (navigator.userAgent.indexOf("Android") != -1) {
                 document.location.href = 'tel:911';
             } else if (navigator.userAgent.indexOf("iPhone") != -1) {
                 window.location = 'telprompt://911';
             }
-		});
+        });
 
-		$hospitals.click(function() {
+        $hospitals.click(function () {
             if ( checkRequirements()== true){
-			$sections.hide();
-            var positions=  new Position();
-            var position= positions.getPositions();
-			arrayStack.push($otherServices);
-            Map.requestLocation(position, 'hospital');
-            setTimeout(function(){
-                    $hospitalPage.fadeIn("fast");
-                    Map.displayMap();}
-                , 3000);
+                mode = "0";
+                var positions = new Position();
+                var position = positions.getPositions();
+                arrayStack.push($otherServices);
+                Map.requestLocation(position, 'hospital');
+
             }
         });
 
-		$towingServices.click(function(){
+        $towingServices.click(function () {
             if ( checkRequirements()== true){
-			   $sections.hide();
-               var positions=  new Position();
-               var position= positions.getPositions();
-			   arrayStack.push($otherServices);
-               var category = 'tow';
-               Map.requestLocation(position, category);
-               setTimeout(function(){
-                    $call.fadeIn("fast");}
-                , 2000);
+                var positions = new Position();
+                var position = positions.getPositions();
+                arrayStack.push($otherServices);
+                var category = 'tow';
+                Map.requestLocation(position, category);
+
             }
-		});
+        });
 
 		$chatButton.click(function(){
 			$sections.hide();
@@ -305,6 +296,17 @@ function searchfor(){
             if (window.localStorage["status"] != 'main'){
                 window.localStorage["status"]= 'main';
                emergencyApp.init();  //recursion para comenzar Configurado
+            }
+            else {
+                if (mode = '0'){
+                    $sections.hide();
+                    $call.fadeIn("fast");
+                }
+                else {
+                    $sections.hide;
+                    Chat(true);
+                    $chat.fadeIn("fast");
+                }
             }
         },
 

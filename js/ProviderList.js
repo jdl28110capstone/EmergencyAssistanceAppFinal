@@ -39,7 +39,7 @@ function getlistofservices(Category, latitude, longitude){
 
     $.ajax({
         type: "GET",
-        url : "http://eaa.ece.uprm.edu:3000/mobileEmergency",
+        url : "http://eaa.ece.uprm.edu:3600/mobileEmergency",
         contentType: "application/json; charset=ISO-8859-1",
         dataType: "json",
         data: {city: City, category: Category, latitude: latitude, longitude:longitude, state: "PR", country:"PR", clientPhoneNumber: window.localStorage["username"]},
@@ -72,6 +72,7 @@ function getlistofservices(Category, latitude, longitude){
 
                 }
                 searchfor();
+                Map.displayMap();
             }
             else {
                     var phoneList = data.phoneList.split(",");
@@ -81,7 +82,6 @@ function getlistofservices(Category, latitude, longitude){
                         positions.savePosition(position[0].position, Country ,State ,City , 'vacio');
                     }
                     else {
-                        alert("Numero de phonelist: " + phoneList[i]);
                         positions.savePosition(position[0].position, Country ,State ,City , phoneList[i]);
                     }
                 }
