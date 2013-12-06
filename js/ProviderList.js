@@ -35,7 +35,7 @@ function getlistofservices(Category, latitude, longitude){
         }
     }
 
-    alert ("City: "+ City + " State: " + State + " Country: " + Country);
+    //alert ("City: "+ City + " State: " + State + " Country: " + Country);
 
     $.ajax({
         type: "GET",
@@ -71,7 +71,6 @@ function getlistofservices(Category, latitude, longitude){
 
                 }
                 searchfor();
-                Map.displayMap();
             }
             else {
                     var phoneList = data.phoneList.split(",");
