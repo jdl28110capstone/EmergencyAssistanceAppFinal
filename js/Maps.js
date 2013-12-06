@@ -19,7 +19,6 @@ Map.displayMap = function()
     var userLatLng = null;
     var HospitalLatLng = [];
 
-    alert ("Position 0: "+ position[0].position.latitude);
 
     for(var i = 0; i < 4; i++){
         if( i==0){

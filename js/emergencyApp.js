@@ -174,7 +174,7 @@ var emergencyApp = {
 
         $hospitals.click(function () {
             if ( checkRequirements()== true){
-                mode = "0";
+                mode = "2";
                 var positions = new Position();
                 var position = positions.getPositions();
                 arrayStack.push($otherServices);
@@ -302,11 +302,16 @@ function searchfor(){
                     $sections.hide();
                     $call.fadeIn("fast");
                 }
-                else {
+                if (mode == "2"){
+                    $sections.hide();
+                    $hospitalPage.fadeIn("fast");
+                }
+                else{
                     $sections.hide;
                     Chat(true);
                     $chat.fadeIn("fast");
                 }
+
             }
         },
 

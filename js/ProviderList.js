@@ -61,7 +61,6 @@ function getlistofservices(Category, latitude, longitude){
                             ), Country ,State ,City);
                     }
                     else {
-                        alert("Numero de phonelist: " + latitudeList[i]);
                         positions.savePosition(
                             new Coords(
                                 latitudeList[i],
