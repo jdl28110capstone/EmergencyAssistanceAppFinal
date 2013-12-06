@@ -1,4 +1,4 @@
-var mode;
+var mode= '1';
 
 var emergencyApp = {
 
@@ -185,6 +185,7 @@ var emergencyApp = {
 
         $towingServices.click(function () {
             if ( checkRequirements()== true){
+                mode = "0";
                 var positions = new Position();
                 var position = positions.getPositions();
                 arrayStack.push($otherServices);
@@ -298,7 +299,7 @@ function searchfor(){
                emergencyApp.init();  //recursion para comenzar Configurado
             }
             else {
-                if (mode == '0'){
+                if (mode == "0"){
                     $sections.hide();
                     $call.fadeIn("fast");
                 }
